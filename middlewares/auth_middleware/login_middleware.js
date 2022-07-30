@@ -1,29 +1,30 @@
 
+const  error=require('../error_handlers/response_error_handlers')
 exports.validateUserFormData =async (req,res,next)=>{
 
 
 
-    if(!req.body) return errorParser(res,null,400,true);
-    else if(!req.body.name) return errorParser(res,"Name is required",400,true);
-    // else if(!req.body.username) return errorParser(res,"Username is required",400,true)
-    else if(!req.body.password) return errorParser(res,"Password is required",400,true)
-    else if(!req.body.login_id) return errorParser(res,"login id is required",400,true)
-    else if(!req.body.isSocialLogin) return errorParser(res,"socialLogin is required",400,true)
+    if(!req.body) return  error.errorParser(res,null,400,true);
+    else if(!req.body.name) return  error.errorParser(res,"Name is required",400,true);
+    // else if(!req.body.username) return  error.errorParser(res,"Username is required",400,true)
+    else if(!req.body.password) return  error.errorParser(res,"Password is required",400,true)
+    else if(!req.body.login_id) return  error.errorParser(res,"login id is required",400,true)
+    else if(!req.body.isSocialLogin) return  error.errorParser(res,"socialLogin is required",400,true)
     next();
     // res.send({});
 }
 
-exports.validateUserLoginFormData =async (req,res,next)=>{
+exports.validateUserLoginFormData = async (req,res,next)=>{
 
     console.log(req.body)
 
-    if(!req.body) return errorParser(res,null,400,true);
-    else if(!req.body.login_id) return errorParser(res,"login id is required",400,true)
+    if(!req.body) return  error.errorParser(res,null,400,true);
+    else if(!req.body.login_id) return  error.errorParser(res,"login id is required",400,true)
     else if(!req.body.isSocialLogin){
-        return errorParser(res,"isSocialLogin is required => please pass true or false",400,true)
+        return  error.errorParser(res,"isSocialLogin is required => please pass true or false",400,true)
     }
     else if(req.body.isSocialLogin==='false' && !req.body.password) {
-         return errorParser(res,"Password is required",400,true)
+         return  error.errorParser(res,"Password is required",400,true)
     }
 
 
@@ -31,45 +32,38 @@ exports.validateUserLoginFormData =async (req,res,next)=>{
 
 }
 
-exports.validateForgotFormData =async (req,res,next)=>{
+exports.validateForgotFormData = async (req,res,next)=>{
 
     console.log(req.body)
 
-    if(!req.body) return errorParser(res,null,400,true);
-    else if(!req.body.login_id) return errorParser(res,"login id is required",400,true)
+    if(!req.body) return  error.errorParser(res,null,400,true);
+    else if(!req.body.login_id) return  error.errorParser(res,"login id is required",400,true)
     next();
 
 }
 
-exports.validateResetFormData =async (req,res,next)=>{
+exports.validateResetFormData = async (req,res,next)=>{
 
     console.log(req.body)
 
-    if(!req.body) return errorParser(res,null,400,true);
-    else if(!req.body.login_id) return errorParser(res,"login id is required",400,true)
-    else if(!req.body.newPassword) return errorParser(res,"New Password is required",400,true);
+    if(!req.body) return  error.errorParser(res,null,400,true);
+    else if(!req.body.login_id) return  error.errorParser(res,"login id is required",400,true)
+    else if(!req.body.newPassword) return  error.errorParser(res,"New Password is required",400,true);
     next();
 
 }
 
-exports.validateUpdateFormData =async (req,res,next)=>{
+exports.validateUpdateFormData = async (req,res,next)=>{
 
     console.log(req.body)
 
-    if(!req.body) return errorParser(res,null,400,true);
-    else if(!req.body.login_id) return errorParser(res,"login id is required",400,true)
-    else if(!req.body.oldPassword) return errorParser(res,"Old Password is required",400,true);
-    else if(!req.body.newPassword) return errorParser(res,"New Password is required",400,true);
-    else if(!req.body.newConfirmedPassword) return errorParser(res,"New Confirm Password is required",400,true);
-    else if(req.body.newConfirmedPassword!==req.body.newPassword) return errorParser(res,"Passwords does not match",400,true);
+    if(!req.body) return error.errorParser(res,null,400,true);
+    else if(!req.body.login_id) return  error.errorParser(res,"login id is required",400,true)
+    else if(!req.body.oldPassword) return  error.errorParser(res,"Old Password is required",400,true);
+    else if(!req.body.newPassword) return  error.errorParser(res,"New Password is required",400,true);
+    else if(!req.body.newConfirmedPassword) return  error.errorParser(res,"New Confirm Password is required",400,true);
+    else if(req.body.newConfirmedPassword!==req.body.newPassword) return  error.errorParser(res,"Passwords does not match",400,true);
     next();
 
 }
 
-errorParser = (res,message,errorCode,errorStatus)=>{
-    res.status(errorCode??200).send({
-        error:errorStatus??true,
-        errorCode:errorCode??200,
-        message:message??"Invalid body parameter(s)"
-    });
-}

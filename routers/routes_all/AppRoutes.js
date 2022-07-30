@@ -10,6 +10,7 @@ class AppRoute {
         this.#rootRoute();
         this.#userRouts();
         this.#surveyRouts();
+        this.#questionRouts();
         return routers;
     }
 
@@ -28,6 +29,11 @@ class AppRoute {
 
     #surveyRouts(){
         routers.use("/survey",require("../../routers/survey_routes/survey_routes") );
+    }
+
+
+    #questionRouts(){
+        routers.use("/question",require("../../routers/questions_routes/question_routes") );
     }
 
 

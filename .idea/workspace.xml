@@ -4,21 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16ef7a66-240e-4905-b65d-54ed2c847ff1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/user_controller/user_controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db_configurations/db_connection.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_handling/file_handling.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/middlewares/auth_middleware/login_middleware.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/user_models/user_model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/routes_all/AppRoutes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/survey_routes/survey_routes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/user_routes/user_routes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/pass_encrypt.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="16ef7a66-240e-4905-b65d-54ed2c847ff1" name="Changes" comment="MEARN without R 1.0.0">
+      <change afterPath="$PROJECT_DIR$/controllers/question_controller/question_controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/survey_controller/survey_controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/middlewares/error_handlers/response_error_handlers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/middlewares/question_middleware/question_middleware.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/question_models/question_section.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/question_models/question_sections_model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/question_models/questions_model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/suvery_models/survey_model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/suvery_models/survey_type_model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routers/questions_routes/question_routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/auth_middleware/auth_middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/auth_middleware/auth_middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/auth_middleware/login_middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/auth_middleware/login_middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/routes_all/AppRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routers/routes_all/AppRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/survey_routes/survey_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routers/survey_routes/survey_routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +41,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2CU2cdEgMIM3Dk8pOqK4RfzPKEs" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -92,8 +95,16 @@
       <workItem from="1658917265379" duration="1250000" />
       <workItem from="1658918612527" duration="4441000" />
       <workItem from="1658993650296" duration="19771000" />
-      <workItem from="1659083962700" duration="9306000" />
+      <workItem from="1659083962700" duration="26424000" />
     </task>
+    <task id="LOCAL-00001" summary="MEARN without R 1.0.0">
+      <created>1659096687114</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1659096687114</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,6 +120,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="MEARN without R 1.0.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="MEARN without R 1.0.0" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
