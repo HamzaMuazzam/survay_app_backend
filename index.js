@@ -4,6 +4,9 @@ const dotenv = require("dotenv");
 const AppRoute = require("./routers/routes_all/AppRoutes");
 const morgan = require("morgan");
 const app = express();
+//TODO: parse application/x-www-form-urlencoded
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
 dotenv.config();
 require("./db_configurations/db_connection")
 
@@ -17,9 +20,7 @@ app.use('/uploads/pdf_documents', express.static('uploads'));
 app.use('/uploads/zip_files', express.static('uploads'));
 app.use(new AppRoute().initAppRouts());
 
-//TODO: parse application/x-www-form-urlencoded
-app.use(express.urlencoded({extended: false}));
-app.use(express.json());
+
 
 const PORT = process.env.PORT || 5000;
 

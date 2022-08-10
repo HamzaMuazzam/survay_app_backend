@@ -4,21 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16ef7a66-240e-4905-b65d-54ed2c847ff1" name="Changes" comment="MEARN without R 1.0.0">
-      <change afterPath="$PROJECT_DIR$/controllers/question_controller/question_controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/survey_controller/survey_controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/middlewares/error_handlers/response_error_handlers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/middlewares/question_middleware/question_middleware.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/question_models/question_section.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/question_models/question_sections_model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/question_models/questions_model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/suvery_models/survey_model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/suvery_models/survey_type_model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/questions_routes/question_routes.js" afterDir="false" />
+    <list default="true" id="16ef7a66-240e-4905-b65d-54ed2c847ff1" name="Changes" comment="MEARN without R 1.0.1">
+      <change afterPath="$PROJECT_DIR$/aagr.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/auth_middleware/auth_middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/auth_middleware/auth_middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/auth_middleware/login_middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/auth_middleware/login_middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/routes_all/AppRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routers/routes_all/AppRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/survey_controller/survey_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/survey_controller/survey_controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_handling/file_handling.js" beforeDir="false" afterPath="$PROJECT_DIR$/file_handling/file_handling.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/question_middleware/question_middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/question_middleware/question_middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/question_models/question_section.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/question_models/question_section.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/question_models/question_sections_model.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/question_models/question_sections_model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/question_models/questions_model.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/question_models/questions_model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/suvery_models/survey_model.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/suvery_models/survey_model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routers/survey_routes/survey_routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routers/survey_routes/survey_routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,27 +45,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "javascript.nodejs.core.library.configured.version": "16.15.1",
-    "javascript.nodejs.core.library.typings.version": "16.11.45",
-    "last_opened_file_path": "/Users/hamzamuazzam/IdeaProjects/survay_app_backend/routers/survey_routes",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "ts.external.directory.path": "/Applications/IntelliJ IDEA.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;16.15.1&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;16.11.45&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/hamzamuazzam/IdeaProjects/survay_app_backend/routers/survey_routes&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/IntelliJ IDEA.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/routers/survey_routes" />
@@ -95,7 +92,10 @@
       <workItem from="1658917265379" duration="1250000" />
       <workItem from="1658918612527" duration="4441000" />
       <workItem from="1658993650296" duration="19771000" />
-      <workItem from="1659083962700" duration="26424000" />
+      <workItem from="1659083962700" duration="30309000" />
+      <workItem from="1659251642977" duration="3830000" />
+      <workItem from="1659346541928" duration="14134000" />
+      <workItem from="1659779769235" duration="327000" />
     </task>
     <task id="LOCAL-00001" summary="MEARN without R 1.0.0">
       <created>1659096687114</created>
@@ -104,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659096687114</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="MEARN without R 1.0.1">
+      <created>1659189161523</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1659189161523</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,30 +130,41 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="MEARN without R 1.0.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="MEARN without R 1.0.0" />
+    <MESSAGE value="MEARN without R 1.0.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="MEARN without R 1.0.1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/file_handling/file_handling.js</url>
-          <line>58</line>
+          <line>51</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/file_handling/file_handling.js</url>
-          <line>59</line>
+          <line>52</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/file_handling/file_handling.js</url>
-          <line>60</line>
+          <line>53</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/file_handling/file_handling.js</url>
-          <line>16</line>
-          <option name="timeStamp" value="21" />
+          <url>file://$PROJECT_DIR$/controllers/survey_controller/survey_controller.js</url>
+          <line>58</line>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/controllers/survey_controller/survey_controller.js</url>
+          <line>70</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/controllers/survey_controller/survey_controller.js</url>
+          <line>68</line>
+          <option name="timeStamp" value="71" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -10,7 +10,7 @@ exports.questionTypeModel = mongoose.model("QuestionType", {
 })
 
 
-exports.questionModel = mongoose.model("Question", {
+let qschema = new mongoose.Schema({
     questionTitle: {
         type: String,
         required: true
@@ -31,12 +31,12 @@ exports.questionModel = mongoose.model("Question", {
         ref: "QuestionSection"
     },
     questionImagePath: String,
-    questionCheckBoxOptions: Array,
-    questionDropDownOptions: Array,
-    questionRatingOptions: Array
+    questionOptions: Array, // must be a string of list
 
+    // questionDropDownOptions: Array,
+    // questionRatingOptions: Array
     // questionSingleInputOptions:String,
     // questionCommentInputOptions:String,
+},{timestamps:true});
 
-
-});
+exports.questionModel = mongoose.model("Question",qschema );

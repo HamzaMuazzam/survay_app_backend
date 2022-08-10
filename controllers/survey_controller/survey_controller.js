@@ -1,38 +1,158 @@
+const mongoose = require("mongoose");
+const color = require("colors");
 const SurveyType = require("../../models/suvery_models/survey_type_model");
 const Survey = require("../../models/suvery_models/survey_model");
-const color = require("colors");
-const mongoose = require("mongoose");
-
+const QuestionSectionModel = require("../../models/question_models/question_section");
+const QuestionModel = require("../../models/question_models/questions_model");
+const fs =require("fs");
 //TODO: SURVEY CRUD ONLY
 
 exports.createSurvey = async (req, res) => {
     try {
+
+
+
+
+
+        // await Survey.deleteMany();
+        // await QuestionSectionModel.QuestionSectionModel.deleteMany();
+        // await QuestionModel.questionModel.deleteMany();
+
+        req.files.forEach((item,index,array)=>{
+                if(item.fieldname==="surveyImage"){req.body.surveyImage=item.path;}
+        })
+
+
+
+
         let result = await Survey.create({
             surveyTitle: req.body.surveyTitle,
-            surveyDescription:req.body.surveyDescription,
-            surveyImage: !req.file? " " : req.file.path,
+            surveyDescription: req.body.surveyDescription,
             surveyType: mongoose.Types.ObjectId(`${req.body.surveyTypeId}`),
             userID: mongoose.Types.ObjectId(`${req.body.id}`),
+            surveyImage: req.body.surveyImage
+
         });
 
-        res.send(result);
-    } catch (e) {
+
+        if (result !== null) {
+            let surveyId = result._id;
+
+
+            for (let i = 0; i < req.body.sections.length; i++) {
+                req.body.sections[i].userId = req.body.id;
+                req.body.sections[i].surveyId = surveyId;
+
+                var resultsOfQuestionSection = await QuestionSectionModel.QuestionSectionModel.create(req.body.sections[i]);
+
+                var updateMany = await Survey.updateOne({_id: surveyId}, {$set: {questionSectionId: resultsOfQuestionSection._id}});
+
+                if (req.body.sections[i].questions) {
+                    for (let j = 0; j < req.body.sections[i].questions.length; j++) {
+                        req.body.sections[i].questions[j].createdBy = req.body.id;
+                        req.body.sections[i].questions[j].questionSectionId = resultsOfQuestionSection._id;
+
+                        // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+                        // console.log(fruits.includes("Mango"));
+                        // console.log(req.files.includes(`sections[${i}][questions][${j}][questionImage]`));
+                        // console.log(`sections[${i}][questions][${j}][questionImage]`);
+                        if (req.files/* && req.files.iterator.includes(`sections[${i}][questions][${j}][questionImage]`)*/) {
+                            console.log(req.files);
+
+                            req.files.forEach((value, index, array) => {
+                                if (value.fieldname === `sections[${i}][questions][${j}][questionImage]`) {
+                                    req.body.sections[i].questions[j].questionImagePath = value.path;
+                                }
+                            })
+
+
+                            // req.body.sections[i].questions[j].questionImagePath = req.files.includes(`sections[${i}][questions][${j}][questionImage]`).fieldname;
+
+                        }
+
+                        let createdQuestion = await QuestionModel.questionModel.create(req.body.sections[i].questions[j]);
+                        if (createdQuestion) {
+                            let newVar = await QuestionSectionModel.QuestionSectionModel.updateOne({_id: resultsOfQuestionSection._id}, {$set: {questionIds: createdQuestion._id}});
+                        }
+
+                    }
+                }
+
+            }
+
+            res.send({
+                body: req.body
+            });
+
+        }
+
+
+    }
+    catch (e) {
+
+
+        if(req.files){
+            req.files.forEach((item,index,array)=>{
+
+            fs.unlinkSync(item.path);
+
+            })
+
+        }
         console.log(e.message);
-        res.status(400).send(e)
+        res.status(400).send({message: e.message})
     }
 
 }
 
 exports.getAllSurveyByUserID = async (req, res) => {
     try {
-        let result = await Survey.find().populate('surveyType',["surveyTypeName","_id"])
+
+
+        let result = await Survey.aggregate([
+            {
+                $lookup: {
+                    from: "surveytypes",
+                    localField: "surveyType",
+                    foreignField: "_id",
+                    as: "surveyType"
+                },
+                $lookup: {
+                    from: "users",
+                    localField: "userID",
+                    foreignField: "_id",
+                    as: "user"
+                },
+                $lookup: {
+                    from: "questionsections",
+                    localField: "questionSectionId",
+                    foreignField: "_id",
+                    as: "sections",
+                    pipeline:[
+                        // { "$match": { "$expr": { "$eq": ["$questionSectionId", "$_id"] }}},
+                        {
+                            $lookup:{
+                                from: "questions",
+                                localField:"questionIds",
+                                foreignField:"_id",
+                                as:"Questions"
+
+                            },
+
+                        },
+                        {$unwind:"$questionIds"}
+                    ],
+                },
+            }
+
+        ])
+
 
         res.send(result);
     } catch (e) {
-        console.log(e.message);
+        console.log(e);
         res.status(400).send(e.message);
     }
-
 }
 
 

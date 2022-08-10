@@ -3,7 +3,8 @@ const authMiddleware = require('../../middlewares/auth_middleware/auth_middlewar
 const surveyController = require('../../controllers/survey_controller/survey_controller')
 router.route("/create")
     .post(
-        require('../../file_handling/file_handling').initFileUploader().single("surveyImage"),
+        // require('../../file_handling/file_handling').initFileUploader().ma("surveyImage"),
+        require('../../file_handling/file_handling').initFileUploader().any(),
         authMiddleware.verifyUserByUserID,
         surveyController.createSurvey
     )

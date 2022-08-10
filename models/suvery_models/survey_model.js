@@ -12,21 +12,24 @@ let surveySchema = new mongoose.Schema({
             type: String,
             required: true
         },
+        surveyCreationRegion: {
+            type: String,
+            required: true
+        },
         surveyType: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'SurveyType',
             required: true,
         },
-
         userID: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',
             required: true,
         },
-        questionSection: {
+
+        questionSectionId: {
             type: [mongoose.Schema.Types.ObjectId],
-            ref: 'QuestionSections',
-            required: true,
+            ref: 'QuestionSections'
         },
 
     },
